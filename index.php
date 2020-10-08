@@ -50,6 +50,19 @@
                 outline: none;
                 box-shadow: 0px 0px 5px skyblue;
             }
+            .confirmar{
+                background-color: #A52A2A;
+                border: none;
+                padding: 5px;
+                margin-top: 30px;
+                color: white;
+                width: 50%;
+                margin-left: auto;
+                display: block;
+            }
+            .confirmar:active{
+                transform: translateY(4px);
+            }
         </style>
     </head>
     <body>
@@ -58,37 +71,40 @@
             <div class="card">
                 <h2>Crie sua conta</h2>
                 <br>
-                <form>
+                <form action="index.php" method="POST">
                     <label>Nome completo:</label>
-                    <input type="text">
+                    <input type="text" name="nome">
                     <label>E-mail:</label>
-                    <input type="email">
+                    <input type="email" name="email">
                     <label>Senha:</label>
-                    <input type="password">
+                    <input type="password" name="password">
                     <label>CPF:</label>
-                    <input type="number">
+                    <input type="number" name="cpf">
                     <label>Endereço:</label>
-                    <input type="text">
+                    <input type="text" name="endereco">
                     <label>Bairro:</label>
-                    <input type="text">
+                    <input type="text" name="bairro">
                     <label>Número:</label>
-                    <input type="number">
+                    <input type="number" name="numero">
                     <label>Cidade:</label>
-                    <input type="text">
+                    <input type="text" name="cidade">
                     <label>Estado:</label>
-                    <input type="text">
+                    <input type="text" name="estado">
                     <label>CEP:</label>
-                    <input type="number">
+                    <input type="number" name="CEP">
+                    <input type="submit" class="confirmar" value="Cadastrar">
                 </form>
             </div>
-        </div>
-        <div class="bottom">Contato</div>
-    </body>
-    
-<?php
+            
+ <?php
+
 
 
 //
 ?>
+        </div>
+        <div class="bottom">Contato</div>
+    </body>
+
 </html>
 
