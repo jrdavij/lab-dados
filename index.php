@@ -73,7 +73,7 @@
                 <br>
                 <form action="index.php" method="POST">
                     <label>Nome completo:</label>
-                    <input type="text" name="nome">
+                    <input type="name" name="nome">
                     <label>E-mail:</label>
                     <input type="email" name="email">
                     <label>Senha:</label>
@@ -91,16 +91,32 @@
                     <label>Estado:</label>
                     <input type="text" name="estado">
                     <label>CEP:</label>
-                    <input type="number" name="CEP">
+                    <input type="number" name="cep">
                     <input type="submit" class="confirmar" value="Cadastrar">
                 </form>
             </div>
             
  <?php
-
-
-
-//
+if (!empty($_POST["nome"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpf"]) && !empty($_POST["endereco"]) && !empty($_POST["bairro"]) && !empty($_POST["numero"]) && !empty($_POST["cidade"]) && !empty($_POST["estado"]) && !empty($_POST["cep"])){
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $cpf = $_POST["cpf"];
+    $endereco = $_POST["endereco"];
+    $bairro = $_POST["bairro"];
+    $numero = $_POST["numero"];
+    $cidade = $_POST["cidade"];
+    $estado = $_POST["estado"];
+    $cep = $_POST["cep"];
+    
+    $bd = mysqli_connect("localhost","root",null,"database");
+    
+    $sql = "Insert into clientes (nome, email, password, cpf, bairro, numero, cidade, estado, cep) values ('$nome','$email','$password','$cpf','$endereco','$bairro',$numero','$cidade','$estado','$cep')";
+    
+    mysqli_query($bd, $sql);
+    
+    $bd->close();
+}
 ?>
         </div>
         <div class="bottom">Contato</div>
