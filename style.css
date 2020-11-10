@@ -1,55 +1,99 @@
 
 html, body{
     width: 100%;
-    height: 100%;
     margin: 0px;
 }
-.top{
-    background-color: #A52A2A;
+body{
+    background-color: #DBCABD;
+}
+.menu{
+    display:flex;
+    justify-content: space-between;
+    background: #E69128;
+    color: white;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     font-size: 24px;
-    color: white;
-    padding: 10px;
-    display: flex;
-    font-family: Source Sans Pro,arial,sans-serif;
-    vertical-align: middle;
-    justify-content: space-between;
+    height: fit-content;
 }
-.text{
-    vertical-align: middle;
-    padding: 5px;
+
+.menu-brand{
+    padding: 10px;
+    margin: auto;
+    font-weight: bold;
+}
+.menu-link{
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
     margin: auto;
 }
+.active{
+    background-color: #c64b4b;
+}
+.menu-login{
+    cursor: pointer;
+    background-color: #7F0D0D;
+    padding: 10px;
+    color:white;
+    text-decoration: none;
+}
+
 .container{
-    width: 90%;
+    width: 600px;
     margin: auto;
-}
-.list{
-    justify-content: space-between;
-    display: flex;
-    vertical-align: middle;
-    margin:auto;
-    border-radius: 4px;
-    padding: 42px;
-    box-shadow: 1px 1px 4px #ccc;
-    font-family: Source Sans Pro, arial, sans-serif;
-    color: #555;
-    max-width: 600px;
-}
-.listcolumn{
-    margin: 0px;
-    width: 30%;
-}
-.bottom{
-    background-color: #A52A2A;
-    color: white;
+    justify-content: center;
     padding: 10px;
-    font-family: Source Sans Pro,arial,sans-serif;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 1px 0px 4px #ccc;
+
 }
-label{
+table{
+    width: 100%;
+}
+table, td, th, tr{
+    text-align: left;
+    padding: 10px;
+    border: none;
+    border-collapse: collapse;
+}
+th{
+    color: white;
+    background-color: rgb(150,42,42);
+}
+.form{
+    margin: auto;
+    justify-content: center;
+    background-color: white;
+    border-radius: 4px;
+    max-width: 600px;
     color: #555;
-    font-weigth: 600;
-    font-size: 14px;
+    box-shadow: 1px 1px 4px #ccc;
+    padding: 10px;
 }
+.form-item{
+    padding: 15px;
+    margin:auto;
+}
+.form-submit{
+    border: none;
+    width: min-content;
+    cursor: pointer;
+}
+textarea{
+    border: 1px solid #ccc;
+}
+textarea:focus{
+    outline: none;
+    border: 1px solid skyblue;
+}
+.end{
+    display:flex;
+    justify-content: flex-end;
+}
+
 input{
     width: 100%;
     height: 31px;
@@ -58,12 +102,14 @@ input{
     padding: 6px 12px;
     font-size: 15px;
     color: #555;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 1px solid #ccc;
 }
 input:focus{
     outline: none;
-    box-shadow: 0px 0px 5px skyblue;
+    border-bottom: 1px solid skyblue;
 }
 .button{
     padding: 10px;
