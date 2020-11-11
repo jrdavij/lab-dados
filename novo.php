@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Cadastro de clientes</title>
+        <title>Pato Virtual</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
     <body>
@@ -38,9 +38,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Gênero</label>
+                <label class="col-sm-2 col-form-label">Editora</label>
                 <div class="col-sm-10">
-                    <input name="genero" type="text" class="form-control" placeholder="Gênero do livro." required>
+                    <input name="editora" type="text" class="form-control" placeholder="Editora do livro." required>
                 </div>
             </div>
             <div class="form-group row">
@@ -74,23 +74,24 @@
                 </div>
             </div>
             <div class="row justify-content-end">
+                <a class="btn px-3 m-3 btn-warning" href="index.php">Voltar</a>
                 <input name="submit" type="submit" class="btn px-3 m-3 btn-warning" value="Criar">
             </div>
             <?php
             $result = "";
             if (isset($_POST['submit'])) {
                 $conn = mysqli_connect("localhost", "root", "", "livraria");
-                $sql = 'insert into livros (nome, autor, genero, ano, isbn, resenha, estado, preco) values'
+                $sql = 'insert into livros (nome, autor, editora, ano, isbn, resenha, estado, preco) values'
                         . '("' . $_POST['titulo']
                         . '","' . $_POST['autor']
-                        . '","' . $_POST['genero']
+                        . '","' . $_POST['editora']
                         . '","' . $_POST['ano']
                         . '","' . $_POST['isbn']
                         . '","' . $_POST['resenha']
                         . '","' . $_POST['estado']
                         . '","' . $_POST['preco'] . '")';
                 if ($conn->query($sql) === TRUE) {
-                    $result = "New record created successfully";
+                    $result = "Novo livro criado com sucesso!";
                 } else {
                     $result = "Error: " . $sql . "<br>" . $conn->error;
                 }

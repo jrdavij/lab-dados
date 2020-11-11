@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Cadastro de clientes</title>
+        <title>Pato Virtual</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
     <body>
@@ -30,7 +30,7 @@
               $resultados = mysqli_query($db, $sql);
               foreach ($resultados as $index=>$row) {
                 $a = new book();
-                $a->set($row['nome'],$row['autor'],$row['ano'],$row['isbn'],$row['estado'],$row['preco'],'L'.$index,$row['resenha']);
+                $a->set($row['nome'],$row['autor'],$row['editora'],$row['ano'],$row['isbn'],$row['estado'],$row['preco'],'L'.$index,$row['resenha']);
                 $a->print();
               }
             ?>
@@ -41,6 +41,7 @@
         class book {
             private $titulo = "";
             private $autor = "";
+            private $editora = "";
             private $ano = "";
             private $isbn = "";
             private $estado = "";
@@ -48,9 +49,10 @@
             private $id = "";
             private $resenha = "";
 
-            function set($titulo, $autor, $ano, $isbn, $estado, $preco, $id, $resenha){
+            function set($titulo, $autor, $editora, $ano, $isbn, $estado, $preco, $id, $resenha){
                 $this->titulo = $titulo;
                 $this->autor = $autor;
+                $this->editora = $editora;
                 $this->ano = $ano;
                 $this->isbn = $isbn;
                 $this->estado = $estado;
@@ -70,6 +72,7 @@
                             <img class="d-block rounded" src="a2.jpg">
                             <div class="col row">
                                 <div class="col">
+                                    <p><b>Editora: </b>'.$this->editora.'</p>
                                     <p><b>Ano: </b>'.$this->ano.'</p>
                                     <p><b>ISBN: </b>'.$this->isbn.'</p>
                                     <p><b>Estado: </b>'.$this->estado.'</p>
